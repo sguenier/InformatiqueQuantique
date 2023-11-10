@@ -9,26 +9,26 @@ quantCirc.barrier()
 
 quantCirc.cx(2, 1)
 
-qc.x(2)
+quantCirc.x(2)
 
-qc.cx(2, 0)
+quantCirc.cx(2, 0)
 
-qc.x(2)
+quantCirc.x(2)
 
-qc.barrier()
+quantCirc.barrier()
 
-qc.swap(0, 1)
+quantCirc.swap(0, 1)
 
-qc.x(1)
+quantCirc.x(1)
 
-qc.cx(2, 1)
+quantCirc.cx(2, 1)
 
-qc.x([0, 1, 2])
+quantCirc.x([0, 1, 2])
 
-qc.cx(2, 0)
+quantCirc.cx(2, 0)
 
-qc.x(2)
+quantCirc.x(2)
 
-qc.measure([0, 1, 2], [0, 1, 2])
+quantCirc.measure([0, 1, 2], [0, 1, 2])
 
-qc.draw()
+quantCirc.draw()
