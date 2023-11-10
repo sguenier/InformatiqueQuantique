@@ -1,0 +1,41 @@
+from qiskit import QuantumCircuit, Aer, transpile
+
+
+quantCirc = QuantumCircuit(3, 1)
+
+quantCirc.h(0)
+
+quantCirc.cx(0, 1) 
+
+quantCirc.x(2)
+
+quantCirc.h(2)  
+
+quantCirc.cx(2, 0) 
+
+quantCirc.cx(2, 1)
+
+quantCirc.x(0)
+
+quantCirc.x(1)
+
+quantCirc.swap(0, 1)
+
+quantCirc.cx(2, 0)
+
+quantCirc.cx(2, 1)
+
+quantCirc.x(0)
+
+quantCirc.x(1)
+
+quantCirc.measure(0, 0)
+
+
+simulator = Aer.get_backend('qasm_simulator')
+
+transpiled_circuit = transpile(quantCirc, simulator)
+
+result = simulator.run(transpiled_circuit).result()
+
+counts = result.get_counts(quantCirc)
