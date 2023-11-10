@@ -1,34 +1,53 @@
+# Importation des modules nécessaires depuis Qiskit
 from qiskit import *
 
+# Création d'un circuit quantique avec 3 bits quantiques et 3 bits classiques
 quantCirc = QuantumCircuit(3, 3)
 
-quantCirch([0, 2])
-quantCirc.cx(0, 1) 
+# Application d'une porte Hadamard aux premier et troisième qubits
+quantCirc.h([0, 2])
 
+# Application d'une porte CNOT (X contrôlé) du qubit 0 au qubit 1
+quantCirc.cx(0, 1)
+
+# Ajout d'une barrière pour séparer différentes parties du circuit
 quantCirc.barrier()
 
+# Application d'une porte CNOT du qubit 2 au qubit 1
 quantCirc.cx(2, 1)
 
+# Application d'une porte X (NOT) au qubit 2
 quantCirc.x(2)
 
+# Application d'une porte CNOT du qubit 2 au qubit 0
 quantCirc.cx(2, 0)
 
+# Application d'une porte X au qubit 2
 quantCirc.x(2)
 
+# Ajout d'une barrière pour séparer différentes parties du circuit
 quantCirc.barrier()
 
+# Échange des qubits 0 et 1
 quantCirc.swap(0, 1)
 
+# Application d'une porte X au qubit 1
 quantCirc.x(1)
 
+# Application d'une porte CNOT du qubit 2 au qubit 1
 quantCirc.cx(2, 1)
 
+# Application d'une porte X à tous les qubits
 quantCirc.x([0, 1, 2])
 
+# Application d'une porte CNOT du qubit 2 au qubit 0
 quantCirc.cx(2, 0)
 
+# Application d'une porte X au qubit 2
 quantCirc.x(2)
 
+# Mesure des qubits 0, 1 et 2 et enregistrement des résultats dans les bits classiques 0, 1 et 2
 quantCirc.measure([0, 1, 2], [0, 1, 2])
 
+# Dessin du circuit quantique
 quantCirc.draw()
