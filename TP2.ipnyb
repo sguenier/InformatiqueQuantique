@@ -8,8 +8,11 @@ for qubit in range(4):
     quantcirc.h(qubit)
 
 #On relie les qubits entre eux
+#La 4e personne regarde les trois devants elle 
 quantcirc.cx(3, 2)
+#La 3e personne regarde les deux devants elle
 quantcirc.cx(2, 1)
+#La 2 personne regarde la premiere
 quantcirc.cx(1, 0)
 
 quantcirc.measure([0, 1, 2], [0, 1, 2])
